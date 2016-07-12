@@ -54,7 +54,7 @@ class BotFeatures:
 
                     status=self.api.get_status(tweet.id_str)
                     txt = "welcome " +user
-                    self.api.update_status(status=txt, in_reply_to_status_id=status.id)
+                    self.api.update_status(status='@' + user + ' '+txt, in_reply_to_status_id=status.id)
                 except tweepy.TweepError as e:
                     print e
                 except StopIteration:
